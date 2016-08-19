@@ -1,0 +1,9 @@
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+SlidingTabLayoutSample.iml
+app/app.iml
+app/app-release.apk
