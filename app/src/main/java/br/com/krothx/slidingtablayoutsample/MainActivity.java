@@ -31,16 +31,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViewPager() {
+        // Instancia o ViewPager a partir do resource adicionado no layout activity_main.xml
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
         if (viewPager != null) {
             setupViewPager(viewPager);
         }
 
+        // Da mesma forma o SlidingTabLayout, também incluso no layout activity_main.xml
         SlidingTabLayout tabLayout = (SlidingTabLayout) findViewById(R.id.tabs);
         //noinspection ConstantConditions
         tabLayout.setSelectedIndicatorColors(Color.WHITE);
         tabLayout.setTextColorResId(R.color.tabs_text_color);
+
+        // Adicionando um callback para disparar eventos ao realizar ações com as abas.
         tabLayout.setOnPageChangeListener(new ViewPager.OnPageChangeListener()  {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -59,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager) {
+        // Instancia o adapter para adicionar cada fragment que será construído em cada aba.
         TabsAdapter adapter = new TabsAdapter(getSupportFragmentManager());
         adapter.addFragment(new FragmentUm(), "PRIMEIRO");
         adapter.addFragment(new FragmentDois(), "SEGUNDO");
