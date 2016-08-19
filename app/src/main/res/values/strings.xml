@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SlidingTabLayoutSample</string>
+    <string name="title_main_activity">Tabs</string>
 </resources>
